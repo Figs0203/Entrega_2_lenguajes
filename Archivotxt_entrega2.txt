@@ -1,0 +1,46 @@
+1. Proceso de resolución del ejercicio:
+
+Para abordar el ejercicio, primero analizamos detenidamente los requisitos proporcionados en la descripción del proyecto, hicimos una breve descripción paso a paso de lo que deberíamos hacer en papel, para así tener la idea mas clara. Identificamos que debíamos desarrollar un programa en Haskell que generara un código de identificación para estudiantes de la Universidad, considerando varios criterios como el período de admisión, la categoría del programa académico y el número de orden del estudiante. Además, el código generado debía clasificarse como par o impar.
+
+Comenzamos descomponiendo el problema en pasos más pequeños y manejables. Decidimos utilizar funciones puras para mantener el código limpio y modular. Implementamos funciones para calcular la suma de los divisores propios de un número, clasificar un número como perfecto, abundante o deficiente según la suma de sus divisores, y obtener la categoría del programa basada en la clasificación numérica.
+
+en la función "clasificacionNumerica" usamos guardas, pues anteriormente teníamos el código mucho mas extenso, y no funcionaba como debería. esto nos facilito mucho las cosas.
+
+también en la función "obtenerCategoriaPrograma" hacíamos usado inicialmente guardas, pero luego lo cambiamos por la expresión case, pues nos simplifico mas el código y también aprendimos algo nuevo.
+
+Luego, definimos funciones para determinar el período de admisión y extraer el número de orden del código del estudiante. Implementamos también una función para verificar si un número es par o impar.
+
+Finalmente, combinamos todas estas funciones en una función principal llamada `analizarCodigoEstudiante`, que toma el código del estudiante como entrada y produce la salida requerida según los requisitos del proyecto.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Proceso de currificación en la solución propuesta:
+
+El proceso de currificación se manifiesta en varias partes del código. Por ejemplo, en la función `divisoresPropios`, el argumento `n` se pasa como un único argumento a la función de lista de comprensión `[x | x <- [1..(n `div` 2)], n `mod` x == 0]`. Aquí, la función `divisoresPropios` toma un solo argumento `n` y devuelve una función que luego se utiliza en la lista de comprensión.
+
+Del mismo modo, en la función `clasificacionNumerica`, la función `sum` toma un solo argumento (la lista de divisores propios generada por `divisoresPropios n`), lo que demuestra el proceso de currificación.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**3. Clasificación de las funciones:**
+
+- `divisoresPropios`: Esta función toma un argumento entero y devuelve la suma de los divisores propios de ese número. Es una función de orden superior, ya que utiliza la función `sum` para calcular la suma de los divisores propios. No es polimórfica, ya que trabaja exclusivamente con números enteros.
+
+- `clasificacionNumerica`: Esta función toma un argumento entero y devuelve una cadena que indica si el número es perfecto, abundante o deficiente. Es una función de orden superior, ya que utiliza la función `divisoresPropios` como parte de su implementación. No es polimórfica, ya que opera solo en números enteros.
+
+- `obtenerCategoriaPrograma`: Esta función toma un argumento entero y devuelve una cadena que representa la categoría del programa académico basada en la clasificación numérica del número. Es una función de orden superior, ya que utiliza la función `clasificacionNumerica` como parte de su implementación. No es polimórfica, ya que trabaja exclusivamente con números enteros.
+
+- `periodoDeAdmision`: Esta función toma un argumento entero y devuelve una cadena que representa el período de admisión. Es una función de orden superior, ya que utiliza expresiones condicionales para determinar el año y el semestre. No es polimórfica, ya que trabaja exclusivamente con números enteros.
+
+- `obtenerNumeroOrden`: Esta función toma un argumento entero y devuelve el número de orden del código del estudiante. Es una función polimórfica, ya que puede trabajar con cualquier tipo de número entero. No es de orden superior, ya que no toma ninguna función como argumento ni devuelve una función como resultado.
+
+- `esPar`: Esta función toma un argumento entero y devuelve un valor booleano que indica si el número es par o no. Es una función polimórfica, ya que puede trabajar con cualquier tipo de número entero. No es de orden superior, ya que no toma ninguna función como argumento ni devuelve una función como resultado.
+
+- `analizarCodigoEstudiante`: Esta función toma un argumento entero y devuelve una cadena que representa la salida deseada según los requisitos del proyecto. Es una función de orden superior, ya que utiliza varias funciones definidas anteriormente para generar la salida. No es polimórfica, ya que trabaja exclusivamente con números enteros.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Repositorio de GitHub: https://github.com/Figs0203/Entrega_2_lenguajes.git
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Link del video en YouTube: 
