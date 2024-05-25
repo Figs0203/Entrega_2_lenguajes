@@ -43,4 +43,4 @@ Del mismo modo, en la función `clasificacionNumerica`, la función `sum` toma u
 4. Repositorio de GitHub: https://github.com/Figs0203/Entrega_2_lenguajes.git
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-5. Link del video en YouTube: 
+5. Link del video en YouTube: https://youtu.be/8Y8S_XDjvwc?si=9-GJl-I7d5tuA2e9
